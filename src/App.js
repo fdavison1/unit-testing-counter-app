@@ -12,16 +12,28 @@ export default class App extends React.Component {
   this.setState(prevState => ({
     count: prevState.count + amount
   }))
+
   increment = this.makeIncrementer(1)
+
+  decrement = this.makeIncrementer(-1)
 
   render(){
     return(
       <div className='App'>
         <p>Count: {this.state.count}</p>
+        
         <button 
         className='increment'
         onClick={this.increment}>
-        Increment count</button>
+        Increment count
+        </button>
+
+        <button
+          className='decrement'
+          onClick={this.decrement}
+        >Decrement count
+        </button>
+
       </div>
     )
   }
