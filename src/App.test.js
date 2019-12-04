@@ -2,6 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import App from './App'
 import './setupTests'
+import renderer from 'react-test-renderer'
 
 
 describe('App Component', () => {
@@ -24,5 +25,9 @@ describe('App Component', () => {
     decrementBtn.simulate('click')
     const text = wrapper.find('p').text()
     expect(text).toEqual('Count: -1')
+  })
+  it('matches the snapshot', () => {
+    const tree = renderer.create(<App />).toJSON()
+    expect(tree).toMatchSnapshot()
   })
 })

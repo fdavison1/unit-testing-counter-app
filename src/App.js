@@ -25,13 +25,13 @@ export default class App extends React.Component {
         <button 
         className='increment'
         onClick={this.increment}>
-        Increment count
+        Increment
         </button>
 
         <button
           className='decrement'
           onClick={this.decrement}
-        >Decrement count
+        >Decrement
         </button>
 
       </div>
